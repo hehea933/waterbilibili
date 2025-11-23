@@ -3,9 +3,11 @@ loaderVersion="[4,)"
 license="MIT"
 
 [[mods]]
-modId="waterbilibili"  # 必须全小写，和主类里的 @Mod("waterbilibili") 一致
-version="1.0.0"
+modId="waterbilibili"
+version="2.2.0"
 displayName="WaterBilibili"
+# 👇 这一行指定图标，文件名必须和你放在 resources 文件夹里的图片一致
+logoFile="logo.png"
 description="WaterFrames Addon"
 authors="Me"
 

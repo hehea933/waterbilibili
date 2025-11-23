@@ -5,7 +5,7 @@ plugins {
     id 'net.neoforged.moddev' version '2.0.119'
 }
 
-version = '1.0.0'
+version = '2.2.0'
 group = 'net.addon.waterbilibili' // 你的指定包名
 base {
     archivesName = 'waterbilibili' // 你的指定Mod ID
