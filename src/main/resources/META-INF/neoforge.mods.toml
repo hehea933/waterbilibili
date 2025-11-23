@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="MIT"
+
+[[mods]]
+modId="waterbilibili"  # 必须全小写，和主类里的 @Mod("waterbilibili") 一致
+version="1.0.0"
+displayName="WaterBilibili"
+description="WaterFrames Addon"
+authors="Me"
+
+[[dependencies.waterbilibili]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.waterbilibili]]
+modId="waterframes"
+type="required"
+versionRange="[2.0,)"
+ordering="AFTER"
+side="BOTH"

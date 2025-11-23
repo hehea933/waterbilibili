@@ -1,0 +1,13 @@
+{
+  "itemGroup.waterbilibili": "Example Mod Tab",
+  "block.waterbilibili.example_block": "Example Block",
+  "item.waterbilibili.example_item": "Example Item",
+
+  "waterbilibili.configuration.title": "waterbilibili Configs",
+  "waterbilibili.configuration.section.waterbilibili.common.toml": "waterbilibili Configs",
+  "waterbilibili.configuration.section.waterbilibili.common.toml.title": "waterbilibili Configs",
+  "waterbilibili.configuration.items": "Item List",
+  "waterbilibili.configuration.logDirtBlock": "Log Dirt Block",
+  "waterbilibili.configuration.magicNumberIntroduction": "Magic Number Text",
+  "waterbilibili.configuration.magicNumber": "Magic Number"
+}

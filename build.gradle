@@ -1,0 +1,75 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    // 使用 NeoForge 官方 ModDev 插件
+    id 'net.neoforged.moddev' version '2.0.119'
+}
+
+version = '1.0.0'
+group = 'net.addon.waterbilibili' // 你的指定包名
+base {
+    archivesName = 'waterbilibili' // 你的指定Mod ID
+}
+
+// 1.21.1 必须使用 Java 21
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = '21.1.206' // 请确保这是有效的 1.21.1 NeoForge 版本
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.base.archivesName.get()
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.base.archivesName.get()
+        }
+    }
+
+    mods {
+        // 定义模组，必须与 mods.toml 中的 modId 一致
+        waterbilibili {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    // CurseMaven 仓库：用于下载 WaterFrames 和 WaterMedia
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    // 1. 添加 WaterMedia 官方 Maven (解决找不到文件的问题)
+    maven { url 'https://maven.watermedia.srrapero120.me/releases' }
+
+    // 2. 保留 CurseMaven (用于下载 WaterFrames)
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
+dependencies {
+    // 告诉 Gradle 直接读取 libs 文件夹里的所有 jar 包
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
